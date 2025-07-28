@@ -1,3 +1,7 @@
 ^dexid\.Rproj$
 ^\.Rproj\.user$
 ^LICENSE\.md$
+^README\.Rmd$
+^[\.]?air\.toml$
+^\.vscode$
+^data-raw$
