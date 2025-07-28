@@ -42,6 +42,7 @@ in different formats.</p>
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">dexid</span><span class="op">(</span></span>
 <span>  <span class="va">n</span>,</span>
+<span>  n_adj <span class="op">=</span> <span class="fl">1</span>,</span>
 <span>  gen <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">9</span>,</span>
 <span>  case <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"snake"</span>, <span class="st">"kebab"</span>, <span class="st">"small_camel"</span>, <span class="st">"big_camel"</span>, <span class="st">"screaming_snake"</span>, <span class="st">"parsed"</span>,</span>
 <span>    <span class="st">"mixed"</span>, <span class="st">"lower_upper"</span>, <span class="st">"upper_lower"</span>, <span class="st">"swap"</span>, <span class="st">"all_caps"</span>, <span class="st">"lower_camel"</span>,</span>
@@ -57,6 +58,10 @@ in different formats.</p>
 
 <dl><dt id="arg-n">n<a class="anchor" aria-label="anchor" href="#arg-n"></a></dt>
 <dd><p>An integer. Number of IDs to generate.</p></dd>
+
+
+<dt id="arg-n-adj">n_adj<a class="anchor" aria-label="anchor" href="#arg-n-adj"></a></dt>
+<dd><p>An integer. Number of adjectives to use. Defaults to 1.</p></dd>
 
 
 <dt id="arg-gen">gen<a class="anchor" aria-label="anchor" href="#arg-gen"></a></dt>
@@ -86,23 +91,28 @@ in different formats.</p>
 <span class="r-in"><span><span class="fu">dexid</span><span class="op">(</span><span class="fl">5</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "complete_inkay"    "unlined_chewtle"   "advanced_snivy"   </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [4] "strong_ledyba"     "competent_linoone"</span>
+<span class="r-in"><span><span class="co"># Generate 5 IDs with more adjectives</span></span></span>
+<span class="r-in"><span><span class="fu">dexid</span><span class="op">(</span><span class="fl">5</span>, n_adj <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "long_mortified_wishiwashi"   "pricey_intrepid_solosis"    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [3] "self_assured_wise_ribombee"  "bubbly_precious_basculegion"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [5] "large_glass_ogerpon"        </span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Generate 5 Title Case IDs</span></span></span>
 <span class="r-in"><span><span class="fu">dexid</span><span class="op">(</span><span class="fl">5</span>, case <span class="op">=</span> <span class="st">"title"</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Long Gyarados"           "Mortified Stonjourner"  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [3] "Pricey Reshiram"         "Intrepid Drapion"       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [5] "Self Assured Wishiwashi"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Unsteady Buzzwole" "Chief Thievul"     "Smooth Dewott"    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [4] "Ample Lotad"       "Blank Silvally"   </span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Generate 5 IDs with random digits</span></span></span>
 <span class="r-in"><span><span class="fu">dexid</span><span class="op">(</span><span class="fl">5</span>, add_digits <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "incomparable_quilava_0501" "mundane_golbat_0772"      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [3] "quarterly_exeggcute_5606"  "silver_buzzwole_8139"     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [5] "unsteady_thievul_0752"    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "naughty_tatsugiri_6984"  "practical_vigoroth_3432"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [3] "acrobatic_umbreon_5050"  "shady_corviknight_2924" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [5] "infinite_gliscor_4632"  </span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Generate 5 IDs restrict to specific generation(s)</span></span></span>
 <span class="r-in"><span><span class="fu">dexid</span><span class="op">(</span><span class="fl">5</span>, gen <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "practical_nidoran"   "acrobatic_golduck"   "shady_metapod"      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [4] "infinite_clefable"   "scientific_squirtle"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "unacceptable_charmander" "spry_zubat"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [3] "crowded_magneton"        "forceful_gengar"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [5] "unfinished_dratini"     </span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
