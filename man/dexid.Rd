@@ -38,7 +38,8 @@ in different formats.
 \examples{
 # Generate 5 basic snake_case IDs
 dexid(5)
-# Generate 5 IDs with more adjectives
+
+# Generate 5 IDs with 2 adjectives for more uniqueness
 dexid(5, n_adj = 2)
 
 # Generate 5 Title Case IDs
