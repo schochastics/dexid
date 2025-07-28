@@ -32,7 +32,7 @@ pak::pak("schochastics/dexid")
 
 ## Example
 
-The main function `dexid()` generates random identifiers by combining adjectives with Pokémon names:
+The main function `dexid()` generates random identifiers by combining adjectives with Pokémon names. By default, it generates identifiers in `snake_case`, but you can customize the case style, number of used adjectives, and whether to add random digits.
 
 ```{r example}
 library(dexid)
@@ -40,6 +40,9 @@ set.seed(1234)
 
 # Generate 5 basic snake_case IDs
 dexid(5)
+
+# Generate 5 IDs with 2 adjectives for more uniqueness
+dexid(5, n_adj = 2)
 
 # Generate 5 Title Case IDs
 dexid(5, case = "title")
@@ -51,8 +54,9 @@ dexid(5, add_digits = TRUE)
 dexid(5, gen = 1)
 ```
 
+The package includes `r length(dexid:::adjectives)` adjectives and `r length(dexid:::pokemon)` Pokémon names, allowing for `r format(length(dexid:::adjectives) * length(dexid:::pokemon),big.mark = ",")` unique combinations with one adjective and `r format(length(dexid:::adjectives)^2 * length(dexid:::pokemon),big.mark = ",")` unique combinations with two adjectives.
 
-The package supports all case styles implemented in the `snakecase` package.
+## Sentences
 
 The function `dex_sentence()` generates random sentence of Pokémon using a specific move that can be used as an identifier.
 ```{r}
