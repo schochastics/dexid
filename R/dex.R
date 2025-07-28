@@ -14,6 +14,14 @@ sample_words <- function(words, n) {
   )]
 }
 
+to_case <- function(string, case, ...) {
+  if (case != "kebab") {
+    snakecase::to_any_case(string, case = case, ...)
+  } else {
+    gsub(" ", "-", string)
+  }
+}
+
 #' Generate Random IDs Using Adjectives and Pokemon Names
 #'
 #' @description
@@ -22,7 +30,7 @@ sample_words <- function(words, n) {
 #'
 #' @param n An integer. Number of IDs to generate.
 #' @param gen vector of integers. The generations of Pokemon to use. Defaults to all generations.
-#' @param case Character string. The case style to use. Supports all styles implemented in the package `snakecase`.
+#' @param case Character string. The case style to use. Supports all styles implemented in the package `snakecase` and kebab-case.
 #' @param add_digits Logical. If `TRUE`, adds a random digit to the end of each ID. Defaults to `FALSE`.
 #' @param ... other arguments passed to `snakecase::to_any_case()`.
 #'
@@ -46,6 +54,7 @@ dexid <- function(
   gen = 1:9,
   case = c(
     "snake",
+    "kebab",
     "small_camel",
     "big_camel",
     "screaming_snake",
@@ -80,7 +89,7 @@ dexid <- function(
   }
 
   dex <- paste0(adj_sample, " ", poke_sample)
-  snakecase::to_any_case(dex, case = case, ...)
+  to_case(dex, case = case, ...)
 }
 
 #' Generate Random sentences of Pokémon using moves
@@ -99,6 +108,7 @@ dex_sentence <- function(
   case = c(
     "sentence",
     "snake",
+    "kebab",
     "small_camel",
     "big_camel",
     "screaming_snake",
@@ -131,12 +141,10 @@ dex_sentence <- function(
     adj_sample,
     " ",
     poke_sample,
-    " ",
     " uses ",
     move_sample,
     " ",
-    adverb_sample,
-    "."
+    adverb_sample
   )
-  snakecase::to_any_case(sentence, case = case, ...)
+  to_case(sentence, case = case, ...)
 }
