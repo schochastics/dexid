@@ -78,3 +78,6 @@ dex_sentence(5)
 #> [4] "Phony sharpedo uses soft boiled fondly"   
 #> [5] "Arid zapdos uses aurora beam fondly"
 ```
+
+The sentence structure is always adjective + Pokémon name + “uses” +
+move + adverb. There are 75,405,565,125 unique sentences available.

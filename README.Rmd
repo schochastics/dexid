@@ -62,3 +62,5 @@ The function `dex_sentence()` generates random sentence of Pokémon using a spec
 ```{r}
 dex_sentence(5)
 ```
+
+The sentence structure is always adjective + Pokémon name + "uses" + move + adverb. There are `r format(length(dexid:::adjectives) * length(dexid:::pokemon) * length(dexid:::moves) * 331,big.mark = ",")` unique sentences available.
