@@ -28,24 +28,24 @@ adjectives with Pokémon names:
 library(dexid)
 # Generate 5 basic snake_case IDs
 dexid(5)
-#> [1] "outlandish_slowbro" "scornful_swoobat"   "tempting_scrafty"  
-#> [4] "snoopy_kleavor"     "unhealthy_hoppip"
+#> [1] "perfect_panpour"     "obvious_ferrothorn"  "juvenile_meditite"  
+#> [4] "delightful_oshawott" "granular_fennekin"
 
 # Generate 5 Title Case IDs
 dexid(5, case = "title")
-#> [1] "Uniform Clefable"    "Noteworthy Basculin" "Wealthy Rhydon"     
-#> [4] "Composed Arceus"     "United Jigglypuff"
+#> [1] "Kaleidoscopic Jangmo o" "Tricky Excadrill"       "Pricey Rockruff"       
+#> [4] "Huge Krokorok"          "Glamorous Wynaut"
 
 # Generate 5 IDs with random digits
 dexid(5, add_digits = TRUE)
-#> [1] "discrete_tinkaton_4919"     "unlawful_boldore_6585"     
-#> [3] "cylindrical_electrike_8240" "starchy_dialga_7858"       
-#> [5] "amazing_lurantis_4756"
+#> [1] "agitated_seviper_8023"     "waterlogged_clamperl_4949"
+#> [3] "actual_vanillite_5543"     "coarse_mr_mime_6021"      
+#> [5] "gloomy_koraidon_9430"
 
-#Restrict to specific generation
+# Restrict to specific generation
 dexid(5, gen = 1)
-#> [1] "creepy_onix"       "shabby_magnemite"  "our_magneton"     
-#> [4] "prestigious_arbok" "safe_rapidash"
+#> [1] "novel_seadra"         "punctual_golbat"      "complicated_shellder"
+#> [4] "awkward_zapdos"       "honorable_gloom"
 ```
 
 The package supports all case styles implemented in the `snakecase`

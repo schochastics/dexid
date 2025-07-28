@@ -43,7 +43,7 @@ dexid(5, case = "title")
 # Generate 5 IDs with random digits
 dexid(5, add_digits = TRUE)
 
-#Restrict to specific generation
+# Restrict to specific generation
 dexid(5, gen = 1)
 ```
 
