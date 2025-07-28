@@ -64,7 +64,7 @@
 <div class="section level2">
 <h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
 </h2>
-<p>The main function <code><a href="reference/dexid.html">dexid()</a></code> generates random identifiers by combining adjectives with Pokémon names:</p>
+<p>The main function <code><a href="reference/dexid.html">dexid()</a></code> generates random identifiers by combining adjectives with Pokémon names. By default, it generates identifiers in <code>snake_case</code>, but you can customize the case style, number of used adjectives, and whether to add random digits.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://schochastics.github.io/dexid/">dexid</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1234</span><span class="op">)</span></span>
@@ -74,29 +74,40 @@
 <span><span class="co">#&gt; [1] "wild_enamorus"    "similar_landorus" "tame_garganacl"   "shiny_bibarel"   </span></span>
 <span><span class="co">#&gt; [5] "jumbo_kleavor"</span></span>
 <span></span>
+<span><span class="co"># Generate 5 IDs with 2 adjectives for more uniqueness</span></span>
+<span><span class="fu"><a href="reference/dexid.html">dexid</a></span><span class="op">(</span><span class="fl">5</span>, n_adj <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "bitter_tangible_krokorok"        "misguided_envious_scovillain"   </span></span>
+<span><span class="co">#&gt; [3] "substantial_productive_frigibax" "disgusting_concerned_rotom"     </span></span>
+<span><span class="co">#&gt; [5] "improbable_adorable_zweilous"</span></span>
+<span></span>
 <span><span class="co"># Generate 5 Title Case IDs</span></span>
 <span><span class="fu"><a href="reference/dexid.html">dexid</a></span><span class="op">(</span><span class="fl">5</span>, case <span class="op">=</span> <span class="st">"title"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "Bitter Duraludon"       "Tangible Lotad"         "Misguided Azumarill"   </span></span>
-<span><span class="co">#&gt; [4] "Envious Gothita"        "Substantial Charmander"</span></span>
+<span><span class="co">#&gt; [1] "Quarrelsome Okidogi"       "Incompatible Crabominable"</span></span>
+<span><span class="co">#&gt; [3] "Tedious Azurill"           "Bulky Mudkip"             </span></span>
+<span><span class="co">#&gt; [5] "Spiteful Slowpoke"</span></span>
 <span></span>
 <span><span class="co"># Generate 5 IDs with random digits</span></span>
 <span><span class="fu"><a href="reference/dexid.html">dexid</a></span><span class="op">(</span><span class="fl">5</span>, add_digits <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "ill_fated_rotom_1013" "useful_zweilous_4835" "rough_ursaluna_3911" </span></span>
-<span><span class="co">#&gt; [4] "untidy_duosion_0297"  "shabby_lapras_0257"</span></span>
+<span><span class="co">#&gt; [1] "unknown_sigilyph_4590"  "educated_flareon_4629"  "mammoth_tinkaton_9346" </span></span>
+<span><span class="co">#&gt; [4] "elastic_scyther_2901"   "quarterly_lampent_9737"</span></span>
 <span></span>
 <span><span class="co"># Generate 5 IDs restrict to specific generation(s)</span></span>
 <span><span class="fu"><a href="reference/dexid.html">dexid</a></span><span class="op">(</span><span class="fl">5</span>, gen <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "awkward_vaporeon"  "unknown_venomoth"  "educated_venomoth"</span></span>
-<span><span class="co">#&gt; [4] "mammoth_primeape"  "elastic_flareon"</span></span></code></pre></div>
-<p>The package supports all case styles implemented in the <code>snakecase</code> package.</p>
+<span><span class="co">#&gt; [1] "rotten_weepinbell"   "delirious_raticate"  "liquid_victreebel"  </span></span>
+<span><span class="co">#&gt; [4] "insistent_poliwhirl" "fumbling_drowzee"</span></span></code></pre></div>
+<p>The package includes 1347 adjectives and 1025 Pokémon names, allowing for 1,380,675 unique combinations with one adjective and 1,859,769,225 unique combinations with two adjectives.</p>
+</div>
+<div class="section level2">
+<h2 id="sentences">Sentences<a class="anchor" aria-label="anchor" href="#sentences"></a>
+</h2>
 <p>The function <code><a href="reference/dex_sentence.html">dex_sentence()</a></code> generates random sentence of Pokémon using a specific move that can be used as an identifier.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/dex_sentence.html">dex_sentence</a></span><span class="op">(</span><span class="fl">5</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "Trained snivy uses metronome deliberately"   </span></span>
-<span><span class="co">#&gt; [2] "Rude conkeldurr uses karate chop always"     </span></span>
-<span><span class="co">#&gt; [3] "Bright poipole uses confuse ray solemnly"    </span></span>
-<span><span class="co">#&gt; [4] "Violet steelix uses kinesis loyally"         </span></span>
-<span><span class="co">#&gt; [5] "Itchy sinistea uses horn attack judgmentally"</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] "Envious hippopotas uses water gun greatly"</span></span>
+<span><span class="co">#&gt; [2] "Growing petilil uses lovely kiss really"  </span></span>
+<span><span class="co">#&gt; [3] "Glum cobalion uses bubble beam wetly"     </span></span>
+<span><span class="co">#&gt; [4] "Phony sharpedo uses soft boiled fondly"   </span></span>
+<span><span class="co">#&gt; [5] "Arid zapdos uses aurora beam fondly"</span></span></code></pre></div>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="license">
