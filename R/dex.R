@@ -13,6 +13,7 @@ sample_digits <- function(n, m = 4) {
 #' in different formats.
 #'
 #' @param n An integer. Number of IDs to generate.
+#' @param gen vector of integers. The generations of Pokemon to use. Defaults to all generations.
 #' @param case Character string. The case style to use. Supports all styles implemented in the package `snakecase`.
 #' @param add_digits Logical. If `TRUE`, adds a random digit to the end of each ID. Defaults to `FALSE`.
 #' @param ... other arguments passed to `snakecase::to_any_case()`.
@@ -26,6 +27,7 @@ sample_digits <- function(n, m = 4) {
 #' @export
 dexid <- function(
   n,
+  gen = 1:9,
   case = c(
     "snake",
     "small_camel",
@@ -54,8 +56,9 @@ dexid <- function(
     size = n,
     replace = TRUE
   )]
+  pokemon_gen <- pokemon[generation %in% gen]
   poke_sample <- pokemon[sample.int(
-    length(pokemon),
+    length(pokemon_gen),
     size = n,
     replace = TRUE
   )]

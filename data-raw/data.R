@@ -4,4 +4,20 @@ adjectives <- readLines(
 pokemon <- readLines(
   "https://gist.githubusercontent.com/killshot13/5b45c0089c3b1a19028bec38aad8fa46/raw/10d30ab4a74ac7e083a3cc6135c605379ddee952/pokemon.txt"
 )
-usethis::use_data(adjectives, pokemon, internal = TRUE, overwrite = TRUE)
+
+library(rvest)
+url <- "https://bulbapedia.bulbagarden.net/wiki/Generation"
+doc <- read_html(url)
+generations <- doc |>
+  html_elements("td:nth-child(2)") |>
+  html_text() |>
+  minty::parse_number()
+generation <- rep(1:9, generations)
+
+usethis::use_data(
+  adjectives,
+  pokemon,
+  generation,
+  internal = TRUE,
+  overwrite = TRUE
+)
