@@ -51,7 +51,7 @@
 </h1>
 </div>
 <!-- badges: start -->
-<!-- badges: end -->
+
 <p>Generate memorable identifiers by combining adjectives with Pokémon names. Inspired by codename-style ID generators, this package creates unique and fun labels for objects, files, or projects.</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
@@ -70,23 +70,23 @@
 <span></span>
 <span><span class="co"># Generate 5 basic snake_case IDs</span></span>
 <span><span class="fu"><a href="reference/dexid.html">dexid</a></span><span class="op">(</span><span class="fl">5</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "wild_enamorus"    "similar_landorus" "tame_garganacl"   "shiny_bibarel"   </span></span>
-<span><span class="co">#&gt; [5] "jumbo_kleavor"</span></span>
+<span><span class="co">#&gt; [1] "wild_namorus"    "similar_andorus" "tame_arganacl"   "shiny_ibarel"   </span></span>
+<span><span class="co">#&gt; [5] "jumbo_leavor"</span></span>
 <span></span>
 <span><span class="co"># Generate 5 Title Case IDs</span></span>
 <span><span class="fu"><a href="reference/dexid.html">dexid</a></span><span class="op">(</span><span class="fl">5</span>, case <span class="op">=</span> <span class="st">"title"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "Bitter Duraludon"       "Tangible Lotad"         "Misguided Azumarill"   </span></span>
-<span><span class="co">#&gt; [4] "Envious Gothita"        "Substantial Charmander"</span></span>
+<span><span class="co">#&gt; [1] "Bitter Uraludon"       "Tangible Otad"         "Misguided Zumarill"   </span></span>
+<span><span class="co">#&gt; [4] "Envious Othita"        "Substantial Harmander"</span></span>
 <span></span>
 <span><span class="co"># Generate 5 IDs with random digits</span></span>
 <span><span class="fu"><a href="reference/dexid.html">dexid</a></span><span class="op">(</span><span class="fl">5</span>, add_digits <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "ill_fated_rotom_1013" "useful_zweilous_4835" "rough_ursaluna_3911" </span></span>
-<span><span class="co">#&gt; [4] "untidy_duosion_0297"  "shabby_lapras_0257"</span></span>
+<span><span class="co">#&gt; [1] "ill_fated_otom_1013" "useful_weilous_4835" "rough_rsaluna_3911" </span></span>
+<span><span class="co">#&gt; [4] "untidy_uosion_0297"  "shabby_apras_0257"</span></span>
 <span></span>
 <span><span class="co"># Restrict to specific generation</span></span>
 <span><span class="fu"><a href="reference/dexid.html">dexid</a></span><span class="op">(</span><span class="fl">5</span>, gen <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "awkward_vaporeon"  "unknown_venomoth"  "educated_venomoth"</span></span>
-<span><span class="co">#&gt; [4] "mammoth_primeape"  "elastic_flareon"</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] "awkward_aporeon"  "unknown_enomoth"  "educated_enomoth" "mammoth_rimeape" </span></span>
+<span><span class="co">#&gt; [5] "elastic_lareon"</span></span></code></pre></div>
 <p>The package supports all case styles implemented in the <code>snakecase</code> package.</p>
 </div>
 </div>
@@ -113,7 +113,13 @@
 </ul>
 </div>
 
-
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://github.com/schochastics/dexid/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/schochastics/dexid/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
+<li><a href="https://CRAN.R-project.org/package=dexid" class="external-link"><img src="https://www.r-pkg.org/badges/version/dexid" alt="CRAN status"></a></li>
+</ul>
+</div>
 
   </aside>
 </div>
