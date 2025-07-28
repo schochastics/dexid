@@ -1,0 +1,48 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# dexid
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+Generate memorable identifiers by combining adjectives with Pokémon names. Inspired by codename-style ID generators, this package creates unique and fun labels for objects, files, or projects.
+
+## Installation
+
+You can install the development version of dexid from GitHub with:
+
+``` r
+pak::pak("schochastics/dexid")
+```
+
+## Example
+
+The main function `dexid()` generates random identifiers by combining adjectives with Pokémon names:
+
+```{r example}
+library(dexid)
+# Generate 5 basic snake_case IDs
+dexid(5)
+
+# Generate 5 Title Case IDs
+dexid(5, case = "title")
+
+# Generate 5 IDs with random digits
+dexid(5, add_digits = TRUE)
+```
+
+
+The package supports all case styles implemented in the `snakecase` package.
