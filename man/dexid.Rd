@@ -7,9 +7,9 @@
 dexid(
   n,
   gen = 1:9,
-  case = c("snake", "small_camel", "big_camel", "screaming_snake", "parsed", "mixed",
-    "lower_upper", "upper_lower", "swap", "all_caps", "lower_camel", "upper_camel",
-    "internal_parsing", "none", "flip", "sentence", "random", "title"),
+  case = c("snake", "kebab", "small_camel", "big_camel", "screaming_snake", "parsed",
+    "mixed", "lower_upper", "upper_lower", "swap", "all_caps", "lower_camel",
+    "upper_camel", "internal_parsing", "none", "flip", "sentence", "random", "title"),
   add_digits = FALSE,
   ...
 )
@@ -19,7 +19,7 @@ dexid(
 
 \item{gen}{vector of integers. The generations of Pokemon to use. Defaults to all generations.}
 
-\item{case}{Character string. The case style to use. Supports all styles implemented in the package \code{snakecase}.}
+\item{case}{Character string. The case style to use. Supports all styles implemented in the package \code{snakecase} and kebab-case.}
 
 \item{add_digits}{Logical. If \code{TRUE}, adds a random digit to the end of each ID. Defaults to \code{FALSE}.}
 
