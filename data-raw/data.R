@@ -5,7 +5,7 @@ pokemon <- readLines(
   "https://gist.githubusercontent.com/killshot13/5b45c0089c3b1a19028bec38aad8fa46/raw/10d30ab4a74ac7e083a3cc6135c605379ddee952/pokemon.txt"
 )
 
-pokemon <- stringr::str_replace(pokemon, ".", "")
+pokemon <- stringr::str_replace_all(pokemon, "\\.", "")
 
 library(rvest)
 url <- "https://bulbapedia.bulbagarden.net/wiki/Generation"
