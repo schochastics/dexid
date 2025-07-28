@@ -34,6 +34,8 @@ The main function `dexid()` generates random identifiers by combining adjectives
 
 ```{r example}
 library(dexid)
+set.seed(1234)
+
 # Generate 5 basic snake_case IDs
 dexid(5)
 
