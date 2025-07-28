@@ -54,3 +54,15 @@ dexid(5, gen = 1)
 
 The package supports all case styles implemented in the `snakecase`
 package.
+
+The function `dex_sentence()` generates random sentence of Pokémon using
+a specific move that can be used as an identifier.
+
+``` r
+dex_sentence(5)
+#> [1] "Trained snivy uses metronome deliberately"   
+#> [2] "Rude conkeldurr uses karate chop always"     
+#> [3] "Bright poipole uses confuse ray solemnly"    
+#> [4] "Violet steelix uses kinesis loyally"         
+#> [5] "Itchy sinistea uses horn attack judgmentally"
+```

@@ -53,3 +53,8 @@ dexid(5, gen = 1)
 
 
 The package supports all case styles implemented in the `snakecase` package.
+
+The function `dex_sentence()` generates random sentence of Pokémon using a specific move that can be used as an identifier.
+```{r}
+dex_sentence(5)
+```
