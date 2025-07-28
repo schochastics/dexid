@@ -76,7 +76,7 @@ dexid <- function(
   poke_sample <- sample_words(pokemon_gen, n)
 
   if (add_digits) {
-    poke_sample <- paste0(poke_sample, sample_digits(n))
+    poke_sample <- paste(poke_sample, sample_digits(n))
   }
 
   dex <- paste0(adj_sample, " ", poke_sample)
