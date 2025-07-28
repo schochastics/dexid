@@ -4,12 +4,23 @@
 \alias{dexid}
 \title{Generate Random IDs Using Adjectives and Pokemon Names}
 \usage{
-dexid(n, style = "snake_case")
+dexid(
+  n,
+  case = c("snake", "small_camel", "big_camel", "screaming_snake", "parsed", "mixed",
+    "lower_upper", "upper_lower", "swap", "all_caps", "lower_camel", "upper_camel",
+    "internal_parsing", "none", "flip", "sentence", "random", "title"),
+  add_digits = FALSE,
+  ...
+)
 }
 \arguments{
 \item{n}{An integer. Number of IDs to generate.}
 
-\item{style}{Character string. The case style to use (currently only supports "snake_case").}
+\item{case}{Character string. The case style to use. Supports all styles implemented in the package \code{snakecase}.}
+
+\item{add_digits}{Logical. If \code{TRUE}, adds a random digit to the end of each ID. Defaults to \code{FALSE}.}
+
+\item{...}{other arguments passed to \code{snakecase::to_any_case()}.}
 }
 \value{
 A character vector of length \code{n} containing the generated IDs.
