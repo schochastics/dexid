@@ -24,7 +24,7 @@ Generate memorable identifiers by combining adjectives with Pokémon names. Insp
 
 ## Installation
 
-You can install the development version of dexid from GitHub with:
+You can install the development version of `dexid` from GitHub with:
 
 ``` r
 pak::pak("schochastics/dexid")
