@@ -46,7 +46,7 @@ dexid(5, add_digits = TRUE)
 #> [1] "ill_fated_rotom_1013" "useful_zweilous_4835" "rough_ursaluna_3911" 
 #> [4] "untidy_duosion_0297"  "shabby_lapras_0257"
 
-# Restrict to specific generation
+# Generate 5 IDs restrict to specific generation(s)
 dexid(5, gen = 1)
 #> [1] "awkward_vaporeon"  "unknown_venomoth"  "educated_venomoth"
 #> [4] "mammoth_primeape"  "elastic_flareon"
