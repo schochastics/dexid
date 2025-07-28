@@ -29,9 +29,17 @@ sample_words <- function(words, n) {
 #' @return A character vector of length `n` containing the generated IDs.
 #'
 #' @examples
-#' dexid(3)
-#' dexid(5)
+#'# Generate 5 basic snake_case IDs
+#'dexid(5)
 #'
+#'# Generate 5 Title Case IDs
+#'dexid(5, case = "title")
+#'
+#'# Generate 5 IDs with random digits
+#'dexid(5, add_digits = TRUE)
+#'
+#'# Generate 5 IDs restrict to specific generation(s)
+#'dexid(5, gen = 1)
 #' @export
 dexid <- function(
   n,
