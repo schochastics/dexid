@@ -6,12 +6,10 @@ sample_digits <- function(n, m = 4) {
   sprintf(paste0("%0", m, "d"), sample(0:max_val, n, replace = TRUE))
 }
 
-sample_words <- function(words, n) {
-  words[sample.int(
-    length(words),
-    size = n,
-    replace = TRUE
-  )]
+sample_words <- function(words, n, m = 1) {
+  replicate(n, {
+    paste(sample(words, m, replace = TRUE), collapse = " ")
+  })
 }
 
 to_case <- function(string, case, ...) {
@@ -29,6 +27,7 @@ to_case <- function(string, case, ...) {
 #' in different formats.
 #'
 #' @param n An integer. Number of IDs to generate.
+#' @param n_adj An integer. Number of adjectives to use. Defaults to 1.
 #' @param gen vector of integers. The generations of Pokemon to use. Defaults to all generations.
 #' @param case Character string. The case style to use. Supports all styles implemented in the package `snakecase` and kebab-case.
 #' @param add_digits Logical. If `TRUE`, adds a random digit to the end of each ID. Defaults to `FALSE`.
@@ -39,6 +38,8 @@ to_case <- function(string, case, ...) {
 #' @examples
 #'# Generate 5 basic snake_case IDs
 #'dexid(5)
+#'# Generate 5 IDs with more adjectives
+#'dexid(5, n_adj = 2)
 #'
 #'# Generate 5 Title Case IDs
 #'dexid(5, case = "title")
@@ -51,6 +52,7 @@ to_case <- function(string, case, ...) {
 #' @export
 dexid <- function(
   n,
+  n_adj = 1,
   gen = 1:9,
   case = c(
     "snake",
@@ -80,7 +82,7 @@ dexid <- function(
   if (!all(gen %in% 1:9)) {
     stop("gen must contain values between 1 and 9.")
   }
-  adj_sample <- sample_words(adjectives, n)
+  adj_sample <- sample_words(adjectives, n, m = n_adj)
   pokemon_gen <- pokemon[generation %in% gen]
   poke_sample <- sample_words(pokemon_gen, n)
 

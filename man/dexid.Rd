@@ -6,6 +6,7 @@
 \usage{
 dexid(
   n,
+  n_adj = 1,
   gen = 1:9,
   case = c("snake", "kebab", "small_camel", "big_camel", "screaming_snake", "parsed",
     "mixed", "lower_upper", "upper_lower", "swap", "all_caps", "lower_camel",
@@ -16,6 +17,8 @@ dexid(
 }
 \arguments{
 \item{n}{An integer. Number of IDs to generate.}
+
+\item{n_adj}{An integer. Number of adjectives to use. Defaults to 1.}
 
 \item{gen}{vector of integers. The generations of Pokemon to use. Defaults to all generations.}
 
@@ -35,6 +38,8 @@ in different formats.
 \examples{
 # Generate 5 basic snake_case IDs
 dexid(5)
+# Generate 5 IDs with more adjectives
+dexid(5, n_adj = 2)
 
 # Generate 5 Title Case IDs
 dexid(5, case = "title")
