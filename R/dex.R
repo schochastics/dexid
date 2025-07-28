@@ -61,7 +61,7 @@ dexid <- function(
 ) {
   case <- match.arg(case)
   if (!all(gen %in% 1:9)) {
-    stop("Generations must be between 1 and 9.")
+    stop("gen must contain values between 1 and 9.")
   }
   adj_sample <- sample_words(adjectives, n)
   pokemon_gen <- pokemon[generation %in% gen]
@@ -112,7 +112,7 @@ dex_sentence <- function(
 ) {
   case <- match.arg(case)
   if (!all(gen %in% 1:9)) {
-    stop("Generations must be between 1 and 9.")
+    stop("gen must contain values between 1 and 9.")
   }
   adj_sample <- sample_words(adjectives, n)
   pokemon_gen <- pokemon[generation %in% gen]

@@ -4,7 +4,7 @@
       dexid(3, gen = c(0, 10))
     Condition
       Error in `dexid()`:
-      ! Generations must be between 1 and 9.
+      ! gen must contain values between 1 and 9.
 
 ---
 
@@ -20,7 +20,7 @@
       dex_sentence(3, gen = c(0, 10))
     Condition
       Error in `dex_sentence()`:
-      ! Generations must be between 1 and 9.
+      ! gen must contain values between 1 and 9.
 
 ---
 
