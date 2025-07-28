@@ -51,20 +51,27 @@ dexid <- function(
   add_digits = FALSE,
   ...
 ) {
+  case <- match.arg(case)
+  if (!all(gen %in% 1:9)) {
+    stop("Generations must be between 1 and 9.")
+  }
   adj_sample <- adjectives[sample.int(
     length(adjectives),
     size = n,
     replace = TRUE
   )]
+
   pokemon_gen <- pokemon[generation %in% gen]
   poke_sample <- pokemon[sample.int(
     length(pokemon_gen),
     size = n,
     replace = TRUE
   )]
+
   if (add_digits) {
     poke_sample <- paste0(poke_sample, sample_digits(n))
   }
+
   dex <- paste0(adj_sample, " ", poke_sample)
   snakecase::to_any_case(dex, case = case, ...)
 }
