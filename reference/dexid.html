@@ -81,12 +81,27 @@ in different formats.</p>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">dexid</span><span class="op">(</span><span class="fl">3</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "complete_mareep"  "unlined_inkay"    "advanced_chewtle"</span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># Generate 5 basic snake_case IDs</span></span></span>
 <span class="r-in"><span><span class="fu">dexid</span><span class="op">(</span><span class="fl">5</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "half_indeedee"         "close_eelektross"      "dimpled_brute_bonnet" </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [4] "long_gyarados"         "mortified_stonjourner"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "complete_inkay"    "unlined_chewtle"   "advanced_snivy"   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [4] "strong_ledyba"     "competent_linoone"</span>
 <span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># Generate 5 Title Case IDs</span></span></span>
+<span class="r-in"><span><span class="fu">dexid</span><span class="op">(</span><span class="fl">5</span>, case <span class="op">=</span> <span class="st">"title"</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Long Gyarados"           "Mortified Stonjourner"  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [3] "Pricey Reshiram"         "Intrepid Drapion"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [5] "Self Assured Wishiwashi"</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># Generate 5 IDs with random digits</span></span></span>
+<span class="r-in"><span><span class="fu">dexid</span><span class="op">(</span><span class="fl">5</span>, add_digits <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "incomparable_quilava_0501" "mundane_golbat_0772"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [3] "quarterly_exeggcute_5606"  "silver_buzzwole_8139"     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [5] "unsteady_thievul_0752"    </span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># Generate 5 IDs restrict to specific generation(s)</span></span></span>
+<span class="r-in"><span><span class="fu">dexid</span><span class="op">(</span><span class="fl">5</span>, gen <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "practical_nidoran"   "acrobatic_golduck"   "shady_metapod"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [4] "infinite_clefable"   "scientific_squirtle"</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
