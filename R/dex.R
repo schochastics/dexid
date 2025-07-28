@@ -82,6 +82,9 @@ dexid <- function(
   if (!all(gen %in% 1:9)) {
     stop("gen must contain values between 1 and 9.")
   }
+  if (n_adj < 1) {
+    stop("n_adj must be at least 1.")
+  }
   adj_sample <- sample_words(adjectives, n, m = n_adj)
   pokemon_gen <- pokemon[generation %in% gen]
   poke_sample <- sample_words(pokemon_gen, n)
