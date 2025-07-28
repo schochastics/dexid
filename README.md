@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# dexid
+# dexid <img src="man/figures/logo.png" align="right" height="139" alt="" />
 
 <!-- badges: start -->
 
@@ -28,19 +28,18 @@ adjectives with Pokémon names:
 library(dexid)
 # Generate 5 basic snake_case IDs
 dexid(5)
-#> [1] "anguished_huntail"   "hilarious_lillipup"  "naive_zweilous"     
-#> [4] "neighboring_stufful" "glaring_drifblim"
+#> [1] "monumental_druddigon" "fuzzy_arctibax"       "red_komala"          
+#> [4] "unwitting_sawsbuck"   "firsthand_bulbasaur"
 
 # Generate 5 Title Case IDs
 dexid(5, case = "title")
-#> [1] "Colorless Froslass" "Suburban Totodile"  "Youthful Cloyster" 
-#> [4] "Any Sealeo"         "Grizzled Drapion"
+#> [1] "Those Eevee"         "Stupendous Cetoddle" "Loose Dunsparce"    
+#> [4] "Aged Crocalor"       "Rich Makuhita"
 
 # Generate 5 IDs with random digits
 dexid(5, add_digits = TRUE)
-#> [1] "notable_minun_6209"       "crushing_gastly_5938"    
-#> [3] "wasteful_clodsire_1123"   "bubbly_raboot_3538"      
-#> [5] "unfolded_incineroar_5707"
+#> [1] "pointed_dubwool_3956"  "corrupt_lokix_8968"    "back_larvesta_5180"   
+#> [4] "arid_ribombee_8875"    "giddy_scatterbug_8692"
 ```
 
 The package supports all case styles implemented in the `snakecase`
