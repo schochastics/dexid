@@ -66,26 +66,27 @@
 <p>The main function <code><a href="reference/dexid.html">dexid()</a></code> generates random identifiers by combining adjectives with Pokémon names:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://schochastics.github.io/dexid/">dexid</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1234</span><span class="op">)</span></span>
+<span></span>
 <span><span class="co"># Generate 5 basic snake_case IDs</span></span>
 <span><span class="fu"><a href="reference/dexid.html">dexid</a></span><span class="op">(</span><span class="fl">5</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "perfect_panpour"     "obvious_ferrothorn"  "juvenile_meditite"  </span></span>
-<span><span class="co">#&gt; [4] "delightful_oshawott" "granular_fennekin"</span></span>
+<span><span class="co">#&gt; [1] "wild_enamorus"    "similar_landorus" "tame_garganacl"   "shiny_bibarel"   </span></span>
+<span><span class="co">#&gt; [5] "jumbo_kleavor"</span></span>
 <span></span>
 <span><span class="co"># Generate 5 Title Case IDs</span></span>
 <span><span class="fu"><a href="reference/dexid.html">dexid</a></span><span class="op">(</span><span class="fl">5</span>, case <span class="op">=</span> <span class="st">"title"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "Kaleidoscopic Jangmo o" "Tricky Excadrill"       "Pricey Rockruff"       </span></span>
-<span><span class="co">#&gt; [4] "Huge Krokorok"          "Glamorous Wynaut"</span></span>
+<span><span class="co">#&gt; [1] "Bitter Duraludon"       "Tangible Lotad"         "Misguided Azumarill"   </span></span>
+<span><span class="co">#&gt; [4] "Envious Gothita"        "Substantial Charmander"</span></span>
 <span></span>
 <span><span class="co"># Generate 5 IDs with random digits</span></span>
 <span><span class="fu"><a href="reference/dexid.html">dexid</a></span><span class="op">(</span><span class="fl">5</span>, add_digits <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "agitated_seviper_8023"     "waterlogged_clamperl_4949"</span></span>
-<span><span class="co">#&gt; [3] "actual_vanillite_5543"     "coarse_mr_mime_6021"      </span></span>
-<span><span class="co">#&gt; [5] "gloomy_koraidon_9430"</span></span>
+<span><span class="co">#&gt; [1] "ill_fated_rotom_1013" "useful_zweilous_4835" "rough_ursaluna_3911" </span></span>
+<span><span class="co">#&gt; [4] "untidy_duosion_0297"  "shabby_lapras_0257"</span></span>
 <span></span>
 <span><span class="co"># Restrict to specific generation</span></span>
 <span><span class="fu"><a href="reference/dexid.html">dexid</a></span><span class="op">(</span><span class="fl">5</span>, gen <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "novel_seadra"         "punctual_golbat"      "complicated_shellder"</span></span>
-<span><span class="co">#&gt; [4] "awkward_zapdos"       "honorable_gloom"</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] "awkward_vaporeon"  "unknown_venomoth"  "educated_venomoth"</span></span>
+<span><span class="co">#&gt; [4] "mammoth_primeape"  "elastic_flareon"</span></span></code></pre></div>
 <p>The package supports all case styles implemented in the <code>snakecase</code> package.</p>
 </div>
 </div>
