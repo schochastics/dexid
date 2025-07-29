@@ -37,6 +37,9 @@ sample_words <- function(words, n, m = 1) {
 #'# Generate 5 kebab Case IDs
 #'dexid(5, case = "kebab")
 #'
+#' # Generate 5 IDs with a custom delimiter
+#' dexid(5, case = "custom", delimiter = "|")
+#'
 #'# Generate 5 IDs with random digits
 #'dexid(5, add_digits = TRUE)
 #'
