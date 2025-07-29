@@ -23,13 +23,11 @@ wrapped <- paste0("[", paste(lines, collapse = ","), "]")
 moves_json <- jsonlite::fromJSON(wrapped)
 moves <- moves_json$name |> stringr::str_trim()
 
-
-library(rvest)
 url <- "https://bulbapedia.bulbagarden.net/wiki/Generation"
-doc <- read_html(url)
+doc <- rvest::read_html(url)
 generations <- doc |>
-  html_elements("td:nth-child(2)") |>
-  html_text() |>
+  rvest::html_elements("td:nth-child(2)") |>
+  rvest::html_text() |>
   minty::parse_number()
 generation <- rep(1:9, generations)
 
