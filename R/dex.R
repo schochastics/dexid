@@ -12,14 +12,6 @@ sample_words <- function(words, n, m = 1) {
   })
 }
 
-to_case <- function(string, case, ...) {
-  if (case != "kebab") {
-    snakecase::to_any_case(string, case = case, ...)
-  } else {
-    gsub(" ", "-", string)
-  }
-}
-
 #' Generate Random IDs Using Adjectives and Pokemon Names
 #'
 #' @description
