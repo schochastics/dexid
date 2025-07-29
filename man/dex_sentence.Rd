@@ -7,9 +7,7 @@
 dex_sentence(
   n,
   gen = 1:9,
-  case = c("sentence", "snake", "kebab", "small_camel", "big_camel", "screaming_snake",
-    "parsed", "mixed", "lower_upper", "upper_lower", "swap", "all_caps", "lower_camel",
-    "upper_camel", "internal_parsing", "none", "flip", "random", "title"),
+  case = c("sentence", "snake", "kebab", "camel", "caps", "custom"),
   ...
 )
 }
@@ -18,7 +16,7 @@ dex_sentence(
 
 \item{gen}{vector of integers. The generations of Pokemon to use. Defaults to all generations.}
 
-\item{case}{Character string. The case style to use. Supports all styles implemented in the package \code{snakecase} and kebab-case.}
+\item{case}{Character string. The case style to use. Supported cases are \code{snake}, \code{kebab}, \code{camel}, \code{caps}, sentence and custom. If \code{case} is set to \code{custom}, a \code{delimiter} argument must be provided.}
 
 \item{...}{other arguments passed to \code{snakecase::to_any_case()}.}
 }

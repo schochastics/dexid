@@ -29,7 +29,7 @@ to_case <- function(string, case, ...) {
 #' @param n An integer. Number of IDs to generate.
 #' @param n_adj An integer. Number of adjectives to use. Defaults to 1.
 #' @param gen vector of integers. The generations of Pokemon to use. Defaults to all generations.
-#' @param case Character string. The case style to use. Supports all styles implemented in the package `snakecase` and kebab-case.
+#' @param case Character string. The case style to use. Supported cases are `snake`, `kebab`, `camel`, `caps`, sentence and custom. If `case` is set to `custom`, a `delimiter` argument must be provided.
 #' @param add_digits Logical. If `TRUE`, adds a random digit to the end of each ID. Defaults to `FALSE`.
 #' @param ... other arguments passed to `snakecase::to_any_case()`.
 #'
