@@ -12,8 +12,9 @@ RoxygenNote: 7.3.2
 Depends: 
     R (>= 3.5)
 Imports: 
-    snakecase
+    stringr
 URL: https://schochastics.github.io/dexid/
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
+

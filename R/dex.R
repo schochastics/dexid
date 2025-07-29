@@ -58,23 +58,10 @@ dexid <- function(
   case = c(
     "snake",
     "kebab",
-    "small_camel",
-    "big_camel",
-    "screaming_snake",
-    "parsed",
-    "mixed",
-    "lower_upper",
-    "upper_lower",
-    "swap",
-    "all_caps",
-    "lower_camel",
-    "upper_camel",
-    "internal_parsing",
-    "none",
-    "flip",
+    "camel",
+    "caps",
     "sentence",
-    "random",
-    "title"
+    "custom"
   ),
   add_digits = FALSE,
   ...
@@ -95,7 +82,7 @@ dexid <- function(
   }
 
   dex <- paste0(adj_sample, " ", poke_sample)
-  to_case(dex, case = case, ...)
+  convert_case(dex, style = case, ...)
 }
 
 #' Generate Random sentences of Pokémon using moves
@@ -115,22 +102,9 @@ dex_sentence <- function(
     "sentence",
     "snake",
     "kebab",
-    "small_camel",
-    "big_camel",
-    "screaming_snake",
-    "parsed",
-    "mixed",
-    "lower_upper",
-    "upper_lower",
-    "swap",
-    "all_caps",
-    "lower_camel",
-    "upper_camel",
-    "internal_parsing",
-    "none",
-    "flip",
-    "random",
-    "title"
+    "camel",
+    "caps",
+    "custom"
   ),
   ...
 ) {
@@ -152,5 +126,5 @@ dex_sentence <- function(
     " ",
     adverb_sample
   )
-  to_case(sentence, case = case, ...)
+  convert_case(sentence, style = case, ...)
 }
