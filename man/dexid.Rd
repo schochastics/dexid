@@ -24,7 +24,7 @@ dexid(
 
 \item{add_digits}{Logical. If \code{TRUE}, adds a random digit to the end of each ID. Defaults to \code{FALSE}.}
 
-\item{...}{other arguments passed to \code{snakecase::to_any_case()}.}
+\item{...}{If \code{case} is set to \code{custom}, a \code{delimiter} argument must be provided.}
 }
 \value{
 A character vector of length \code{n} containing the generated IDs.

@@ -23,7 +23,7 @@ sample_words <- function(words, n, m = 1) {
 #' @param gen vector of integers. The generations of Pokemon to use. Defaults to all generations.
 #' @param case Character string. The case style to use. Supported cases are `snake`, `kebab`, `camel`, `caps`, sentence and custom. If `case` is set to `custom`, a `delimiter` argument must be provided.
 #' @param add_digits Logical. If `TRUE`, adds a random digit to the end of each ID. Defaults to `FALSE`.
-#' @param ... other arguments passed to `snakecase::to_any_case()`.
+#' @param ... If `case` is set to `custom`, a `delimiter` argument must be provided.
 #'
 #' @return A character vector of length `n` containing the generated IDs.
 #'

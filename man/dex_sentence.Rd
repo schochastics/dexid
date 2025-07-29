@@ -18,7 +18,7 @@ dex_sentence(
 
 \item{case}{Character string. The case style to use. Supported cases are \code{snake}, \code{kebab}, \code{camel}, \code{caps}, sentence and custom. If \code{case} is set to \code{custom}, a \code{delimiter} argument must be provided.}
 
-\item{...}{other arguments passed to \code{snakecase::to_any_case()}.}
+\item{...}{If \code{case} is set to \code{custom}, a \code{delimiter} argument must be provided.}
 }
 \value{
 A character vector of length \code{n} containing the generated sentences.
