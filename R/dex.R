@@ -12,14 +12,6 @@ sample_words <- function(words, n, m = 1) {
   })
 }
 
-to_case <- function(string, case, ...) {
-  if (case != "kebab") {
-    snakecase::to_any_case(string, case = case, ...)
-  } else {
-    gsub(" ", "-", string)
-  }
-}
-
 #' Generate Random IDs Using Adjectives and Pokemon Names
 #'
 #' @description
@@ -29,9 +21,9 @@ to_case <- function(string, case, ...) {
 #' @param n An integer. Number of IDs to generate.
 #' @param n_adj An integer. Number of adjectives to use. Defaults to 1.
 #' @param gen vector of integers. The generations of Pokemon to use. Defaults to all generations.
-#' @param case Character string. The case style to use. Supports all styles implemented in the package `snakecase` and kebab-case.
+#' @param case Character string. The case style to use. Supported cases are `snake`, `kebab`, `camel`, `caps`, sentence and custom. If `case` is set to `custom`, a `delimiter` argument must be provided.
 #' @param add_digits Logical. If `TRUE`, adds a random digit to the end of each ID. Defaults to `FALSE`.
-#' @param ... other arguments passed to `snakecase::to_any_case()`.
+#' @param ... If `case` is set to `custom`, a `delimiter` argument must be provided.
 #'
 #' @return A character vector of length `n` containing the generated IDs.
 #'
@@ -42,8 +34,8 @@ to_case <- function(string, case, ...) {
 #'# Generate 5 IDs with 2 adjectives for more uniqueness
 #'dexid(5, n_adj = 2)
 #'
-#'# Generate 5 Title Case IDs
-#'dexid(5, case = "title")
+#'# Generate 5 kebab Case IDs
+#'dexid(5, case = "kebab")
 #'
 #'# Generate 5 IDs with random digits
 #'dexid(5, add_digits = TRUE)
@@ -58,23 +50,10 @@ dexid <- function(
   case = c(
     "snake",
     "kebab",
-    "small_camel",
-    "big_camel",
-    "screaming_snake",
-    "parsed",
-    "mixed",
-    "lower_upper",
-    "upper_lower",
-    "swap",
-    "all_caps",
-    "lower_camel",
-    "upper_camel",
-    "internal_parsing",
-    "none",
-    "flip",
+    "camel",
+    "caps",
     "sentence",
-    "random",
-    "title"
+    "custom"
   ),
   add_digits = FALSE,
   ...
@@ -95,7 +74,7 @@ dexid <- function(
   }
 
   dex <- paste0(adj_sample, " ", poke_sample)
-  to_case(dex, case = case, ...)
+  convert_case(dex, style = case, ...)
 }
 
 #' Generate Random sentences of Pokémon using moves
@@ -115,22 +94,9 @@ dex_sentence <- function(
     "sentence",
     "snake",
     "kebab",
-    "small_camel",
-    "big_camel",
-    "screaming_snake",
-    "parsed",
-    "mixed",
-    "lower_upper",
-    "upper_lower",
-    "swap",
-    "all_caps",
-    "lower_camel",
-    "upper_camel",
-    "internal_parsing",
-    "none",
-    "flip",
-    "random",
-    "title"
+    "camel",
+    "caps",
+    "custom"
   ),
   ...
 ) {
@@ -152,5 +118,5 @@ dex_sentence <- function(
     " ",
     adverb_sample
   )
-  to_case(sentence, case = case, ...)
+  convert_case(sentence, style = case, ...)
 }

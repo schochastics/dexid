@@ -44,11 +44,11 @@ dexid(5, n_adj = 2)
 #> [3] "substantial_productive_frigibax" "disgusting_concerned_rotom"     
 #> [5] "improbable_adorable_zweilous"
 
-# Generate 5 Title Case IDs
-dexid(5, case = "title")
-#> [1] "Quarrelsome Okidogi"       "Incompatible Crabominable"
-#> [3] "Tedious Azurill"           "Bulky Mudkip"             
-#> [5] "Spiteful Slowpoke"
+# Generate 5 kebab case IDs
+dexid(5, case = "kebab")
+#> [1] "quarrelsome-okidogi"       "incompatible-crabominable"
+#> [3] "tedious-azurill"           "bulky-mudkip"             
+#> [5] "spiteful-slowpoke"
 
 # Generate 5 IDs with random digits
 dexid(5, add_digits = TRUE)
@@ -75,7 +75,7 @@ dex_sentence(5)
 #> [1] "Envious hippopotas uses water gun greatly"
 #> [2] "Growing petilil uses lovely kiss really"  
 #> [3] "Glum cobalion uses bubble beam wetly"     
-#> [4] "Phony sharpedo uses soft boiled fondly"   
+#> [4] "Phony sharpedo uses soft-boiled fondly"   
 #> [5] "Arid zapdos uses aurora beam fondly"
 ```
 

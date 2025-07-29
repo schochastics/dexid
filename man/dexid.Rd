@@ -8,9 +8,7 @@ dexid(
   n,
   n_adj = 1,
   gen = 1:9,
-  case = c("snake", "kebab", "small_camel", "big_camel", "screaming_snake", "parsed",
-    "mixed", "lower_upper", "upper_lower", "swap", "all_caps", "lower_camel",
-    "upper_camel", "internal_parsing", "none", "flip", "sentence", "random", "title"),
+  case = c("snake", "kebab", "camel", "caps", "sentence", "custom"),
   add_digits = FALSE,
   ...
 )
@@ -22,11 +20,11 @@ dexid(
 
 \item{gen}{vector of integers. The generations of Pokemon to use. Defaults to all generations.}
 
-\item{case}{Character string. The case style to use. Supports all styles implemented in the package \code{snakecase} and kebab-case.}
+\item{case}{Character string. The case style to use. Supported cases are \code{snake}, \code{kebab}, \code{camel}, \code{caps}, sentence and custom. If \code{case} is set to \code{custom}, a \code{delimiter} argument must be provided.}
 
 \item{add_digits}{Logical. If \code{TRUE}, adds a random digit to the end of each ID. Defaults to \code{FALSE}.}
 
-\item{...}{other arguments passed to \code{snakecase::to_any_case()}.}
+\item{...}{If \code{case} is set to \code{custom}, a \code{delimiter} argument must be provided.}
 }
 \value{
 A character vector of length \code{n} containing the generated IDs.
@@ -42,8 +40,8 @@ dexid(5)
 # Generate 5 IDs with 2 adjectives for more uniqueness
 dexid(5, n_adj = 2)
 
-# Generate 5 Title Case IDs
-dexid(5, case = "title")
+# Generate 5 kebab Case IDs
+dexid(5, case = "kebab")
 
 # Generate 5 IDs with random digits
 dexid(5, add_digits = TRUE)
